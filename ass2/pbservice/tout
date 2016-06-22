@@ -1,0 +1,690 @@
+Test: Single primary, no backup ...
+/var/tmp/824-1000/pb-5246-basic-1 online
+  ... Passed
+Test: Add a backup ...
+/var/tmp/824-1000/pb-5246-basic-2 online
+  ... Passed
+Test: Count RPCs to viewserver ...
+  ... Passed
+Test: Primary failure ...
+/var/tmp/824-1000/pb-5246-basic-1 went down
+  ... Passed
+Test: Kill last server, new one should not be active ...
+/var/tmp/824-1000/pb-5246-basic-3 online
+/var/tmp/824-1000/pb-5246-basic-2 went down
+  ... Passed
+/var/tmp/824-1000/pb-5246-basic-3 went down
+Primary timed out. No valid server left... /var/tmp/824-1000/pb-5246-basicv-1 down
+/var/tmp/824-1000/pb-5246-basicv-1 went down
+Test: at-most-once Append; unreliable ...
+/var/tmp/824-1000/pb-5246-tamo-1 online
+finished server init
+testD: prim =  
+testD: prim =  /var/tmp/824-1000/pb-5246-tamo-1
+testD: prim =  /var/tmp/824-1000/pb-5246-tamo-1
+testD: prim =  /var/tmp/824-1000/pb-5246-tamo-1
+testD: prim =  /var/tmp/824-1000/pb-5246-tamo-1
+testD: prim =  /var/tmp/824-1000/pb-5246-tamo-1
+testD: prim =  /var/tmp/824-1000/pb-5246-tamo-1
+testD: prim =  /var/tmp/824-1000/pb-5246-tamo-1
+testD: prim =  /var/tmp/824-1000/pb-5246-tamo-1
+testD: prim =  /var/tmp/824-1000/pb-5246-tamo-1
+view initialized
+unexpected EOF
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-tamo-1: broken pipe
+write unix /var/tmp/824-1000/pb-5246-tamo-1: broken pipe
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-tamo-1: broken pipe
+unexpected EOF
+unexpected EOF
+read unix /var/tmp/824-1000/pb-5246-tamo-1: connection reset by peer
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-tamo-1: broken pipe
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-tamo-1: broken pipe
+unexpected EOF
+unexpected EOF
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-tamo-1: broken pipe
+write unix /var/tmp/824-1000/pb-5246-tamo-1: broken pipe
+unexpected EOF
+unexpected EOF
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-tamo-1: broken pipe
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-tamo-1: broken pipe
+write unix /var/tmp/824-1000/pb-5246-tamo-1: broken pipe
+unexpected EOF
+unexpected EOF
+read unix /var/tmp/824-1000/pb-5246-tamo-1: connection reset by peer
+write unix /var/tmp/824-1000/pb-5246-tamo-1: broken pipe
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+read unix /var/tmp/824-1000/pb-5246-tamo-1: connection reset by peer
+  ... Passed
+/var/tmp/824-1000/pb-5246-tamo-1 went down
+Primary timed out. No valid server left... /var/tmp/824-1000/pb-5246-tamov-1 down
+/var/tmp/824-1000/pb-5246-tamov-1 went down
+/var/tmp/824-1000/pb-5246-failput-1 online
+/var/tmp/824-1000/pb-5246-failput-2 online
+/var/tmp/824-1000/pb-5246-failput-3 online
+Test: Put() immediately after backup failure ...
+/var/tmp/824-1000/pb-5246-failput-2 went down
+  ... Passed
+Test: Put() immediately after primary failure ...
+/var/tmp/824-1000/pb-5246-failput-1 went down
+  ... Passed
+/var/tmp/824-1000/pb-5246-failput-3 went down
+/var/tmp/824-1000/pb-5246-failputv-1 went down
+Test: Concurrent Put()s to the same key ...
+/var/tmp/824-1000/pb-5246-cs-1 online
+/var/tmp/824-1000/pb-5246-cs-2 online
+/var/tmp/824-1000/pb-5246-cs-1 went down
+  ... Passed
+/var/tmp/824-1000/pb-5246-cs-2 went down
+Primary timed out. No valid server left... /var/tmp/824-1000/pb-5246-csv-1 down
+/var/tmp/824-1000/pb-5246-csv-1 went down
+Test: Concurrent Append()s to the same key ...
+/var/tmp/824-1000/pb-5246-csa-1 online
+/var/tmp/824-1000/pb-5246-csa-2 online
+/var/tmp/824-1000/pb-5246-csa-1 went down
+  ... Passed
+/var/tmp/824-1000/pb-5246-csa-2 went down
+Primary timed out. No valid server left... /var/tmp/824-1000/pb-5246-csav-1 down
+/var/tmp/824-1000/pb-5246-csav-1 went down
+Test: Concurrent Put()s to the same key; unreliable ...
+/var/tmp/824-1000/pb-5246-csu-1 online
+/var/tmp/824-1000/pb-5246-csu-2 online
+unexpected EOF
+read unix /var/tmp/824-1000/pb-5246-csu-2: connection reset by peer
+write unix /var/tmp/824-1000/pb-5246-csu-1: broken pipe
+unexpected EOF
+read unix /var/tmp/824-1000/pb-5246-csu-2: connection reset by peer
+write unix /var/tmp/824-1000/pb-5246-csu-2: broken pipe
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-csu-2: broken pipe
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+read unix /var/tmp/824-1000/pb-5246-csu-2: connection reset by peer
+write unix /var/tmp/824-1000/pb-5246-csu-2: broken pipe
+write unix /var/tmp/824-1000/pb-5246-csu-2: broken pipe
+unexpected EOF
+unexpected EOF
+read unix /var/tmp/824-1000/pb-5246-csu-2: connection reset by peer
+unexpected EOF
+unexpected EOF
+unexpected EOF
+read unix /var/tmp/824-1000/pb-5246-csu-1: connection reset by peer
+unexpected EOF
+unexpected EOF
+unexpected EOF
+read unix /var/tmp/824-1000/pb-5246-csu-1: connection reset by peer
+unexpected EOF
+read unix /var/tmp/824-1000/pb-5246-csu-2: connection reset by peer
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+read unix /var/tmp/824-1000/pb-5246-csu-2: connection reset by peer
+write unix /var/tmp/824-1000/pb-5246-csu-1: broken pipe
+write unix /var/tmp/824-1000/pb-5246-csu-2: broken pipe
+write unix /var/tmp/824-1000/pb-5246-csu-2: broken pipe
+write unix /var/tmp/824-1000/pb-5246-csu-2: broken pipe
+read unix /var/tmp/824-1000/pb-5246-csu-2: connection reset by peer
+unexpected EOF
+unexpected EOF
+read unix /var/tmp/824-1000/pb-5246-csu-1: connection reset by peer
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-csu-2: broken pipe
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-csu-2: broken pipe
+unexpected EOF
+unexpected EOF
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-csu-2: broken pipe
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-csu-2: broken pipe
+write unix /var/tmp/824-1000/pb-5246-csu-2: broken pipe
+unexpected EOF
+read unix /var/tmp/824-1000/pb-5246-csu-1: connection reset by peer
+unexpected EOF
+read unix /var/tmp/824-1000/pb-5246-csu-2: connection reset by peer
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-csu-2: broken pipe
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-csu-1: broken pipe
+unexpected EOF
+unexpected EOF
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-csu-2: broken pipe
+unexpected EOF
+unexpected EOF
+read unix /var/tmp/824-1000/pb-5246-csu-2: connection reset by peer
+read unix /var/tmp/824-1000/pb-5246-csu-2: connection reset by peer
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-csu-1: broken pipe
+unexpected EOF
+unexpected EOF
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-csu-2: broken pipe
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+read unix /var/tmp/824-1000/pb-5246-csu-1: connection reset by peer
+unexpected EOF
+unexpected EOF
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-csu-2: broken pipe
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-csu-1: broken pipe
+write unix /var/tmp/824-1000/pb-5246-csu-2: broken pipe
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-csu-2: broken pipe
+unexpected EOF
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-csu-1: broken pipe
+read unix /var/tmp/824-1000/pb-5246-csu-2: connection reset by peer
+write unix /var/tmp/824-1000/pb-5246-csu-2: broken pipe
+write unix /var/tmp/824-1000/pb-5246-csu-1: broken pipe
+unexpected EOF
+unexpected EOF
+unexpected EOF
+read unix /var/tmp/824-1000/pb-5246-csu-1: connection reset by peer
+read unix /var/tmp/824-1000/pb-5246-csu-2: connection reset by peer
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-csu-1: broken pipe
+unexpected EOF
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-csu-2: broken pipe
+read unix /var/tmp/824-1000/pb-5246-csu-1: connection reset by peer
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-csu-2: broken pipe
+write unix /var/tmp/824-1000/pb-5246-csu-2: broken pipe
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-csu-2: broken pipe
+write unix /var/tmp/824-1000/pb-5246-csu-1: broken pipe
+unexpected EOF
+read unix /var/tmp/824-1000/pb-5246-csu-2: connection reset by peer
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-csu-1: broken pipe
+write unix /var/tmp/824-1000/pb-5246-csu-1: broken pipe
+unexpected EOF
+read unix /var/tmp/824-1000/pb-5246-csu-2: connection reset by peer
+unexpected EOF
+unexpected EOF
+unexpected EOF
+read unix /var/tmp/824-1000/pb-5246-csu-2: connection reset by peer
+unexpected EOF
+unexpected EOF
+connection is shut down
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+read unix /var/tmp/824-1000/pb-5246-csu-2: connection reset by peer
+unexpected EOF
+read unix /var/tmp/824-1000/pb-5246-csu-1: connection reset by peer
+write unix /var/tmp/824-1000/pb-5246-csu-2: broken pipe
+unexpected EOF
+read unix /var/tmp/824-1000/pb-5246-csu-1: connection reset by peer
+unexpected EOF
+unexpected EOF
+read unix /var/tmp/824-1000/pb-5246-csu-2: connection reset by peer
+read unix /var/tmp/824-1000/pb-5246-csu-2: connection reset by peer
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+connection is shut down
+unexpected EOF
+unexpected EOF
+read unix /var/tmp/824-1000/pb-5246-csu-2: connection reset by peer
+unexpected EOF
+unexpected EOF
+unexpected EOF
+read unix /var/tmp/824-1000/pb-5246-csu-1: connection reset by peer
+read unix /var/tmp/824-1000/pb-5246-csu-2: connection reset by peer
+unexpected EOF
+unexpected EOF
+unexpected EOF
+read unix /var/tmp/824-1000/pb-5246-csu-1: connection reset by peer
+write unix /var/tmp/824-1000/pb-5246-csu-2: broken pipe
+write unix /var/tmp/824-1000/pb-5246-csu-2: broken pipe
+read unix /var/tmp/824-1000/pb-5246-csu-2: connection reset by peer
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-csu-1: broken pipe
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-csu-2: broken pipe
+unexpected EOF
+unexpected EOF
+read unix /var/tmp/824-1000/pb-5246-csu-1: connection reset by peer
+unexpected EOF
+unexpected EOF
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-csu-2: broken pipe
+write unix /var/tmp/824-1000/pb-5246-csu-2: broken pipe
+write unix /var/tmp/824-1000/pb-5246-csu-2: broken pipe
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-csu-2: broken pipe
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-csu-2: broken pipe
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-csu-2: broken pipe
+unexpected EOF
+unexpected EOF
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-csu-2: broken pipe
+unexpected EOF
+unexpected EOF
+read unix /var/tmp/824-1000/pb-5246-csu-1: connection reset by peer
+read unix /var/tmp/824-1000/pb-5246-csu-1: connection reset by peer
+unexpected EOF
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-csu-2: broken pipe
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+/var/tmp/824-1000/pb-5246-csu-2 went down
+  ... Passed
+/var/tmp/824-1000/pb-5246-csu-1 went down
+Primary timed out. No valid server left... /var/tmp/824-1000/pb-5246-csuv-1 down
+/var/tmp/824-1000/pb-5246-csuv-1 went down
+Test: Repeated failures/restarts ...
+/var/tmp/824-1000/pb-5246-rc-1 online
+/var/tmp/824-1000/pb-5246-rc-2 online
+/var/tmp/824-1000/pb-5246-rc-3 online
+/var/tmp/824-1000/pb-5246-rc-3 went down
+/var/tmp/824-1000/pb-5246-rc-3 online
+/var/tmp/824-1000/pb-5246-rc-3 went down
+/var/tmp/824-1000/pb-5246-rc-3 online
+/var/tmp/824-1000/pb-5246-rc-2 went down
+/var/tmp/824-1000/pb-5246-rc-2 online
+/var/tmp/824-1000/pb-5246-rc-2 went down
+/var/tmp/824-1000/pb-5246-rc-2 online
+/var/tmp/824-1000/pb-5246-rc-3 went down
+/var/tmp/824-1000/pb-5246-rc-3 online
+/var/tmp/824-1000/pb-5246-rc-3 went down
+/var/tmp/824-1000/pb-5246-rc-3 online
+/var/tmp/824-1000/pb-5246-rc-3 went down
+/var/tmp/824-1000/pb-5246-rc-3 online
+/var/tmp/824-1000/pb-5246-rc-1 went down
+/var/tmp/824-1000/pb-5246-rc-1 online
+/var/tmp/824-1000/pb-5246-rc-1 went down
+/var/tmp/824-1000/pb-5246-rc-1 online
+/var/tmp/824-1000/pb-5246-rc-2 went down
+/var/tmp/824-1000/pb-5246-rc-2 online
+  ... Put/Gets done ... 
+  ... Passed
+/var/tmp/824-1000/pb-5246-rc-1 went down
+/var/tmp/824-1000/pb-5246-rc-3 went down
+/var/tmp/824-1000/pb-5246-rc-2 went down
+Primary timed out. No valid server left... /var/tmp/824-1000/pb-5246-rcv-1 down
+/var/tmp/824-1000/pb-5246-rcv-1 went down
+Test: Repeated failures/restarts with concurrent updates to same key; unreliable ...
+/var/tmp/824-1000/pb-5246-rcu-1 online
+/var/tmp/824-1000/pb-5246-rcu-2 online
+/var/tmp/824-1000/pb-5246-rcu-3 online
+unexpected EOF
+unexpected EOF
+/var/tmp/824-1000/pb-5246-rcu-3 went down
+read unix /var/tmp/824-1000/pb-5246-rcu-1: connection reset by peer
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+read unix /var/tmp/824-1000/pb-5246-rcu-2: connection reset by peer
+unexpected EOF
+unexpected EOF
+read unix /var/tmp/824-1000/pb-5246-rcu-1: connection reset by peer
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-rcu-2: broken pipe
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+read unix /var/tmp/824-1000/pb-5246-rcu-2: connection reset by peer
+unexpected EOF
+read unix /var/tmp/824-1000/pb-5246-rcu-1: connection reset by peer
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-rcu-1: broken pipe
+write unix /var/tmp/824-1000/pb-5246-rcu-2: broken pipe
+write unix /var/tmp/824-1000/pb-5246-rcu-2: broken pipe
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-rcu-1: broken pipe
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+/var/tmp/824-1000/pb-5246-rcu-3 online
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-rcu-1: broken pipe
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-rcu-2: broken pipe
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+read unix /var/tmp/824-1000/pb-5246-rcu-2: connection reset by peer
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+read unix /var/tmp/824-1000/pb-5246-rcu-2: connection reset by peer
+write unix /var/tmp/824-1000/pb-5246-rcu-1: broken pipe
+write unix /var/tmp/824-1000/pb-5246-rcu-2: broken pipe
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+/var/tmp/824-1000/pb-5246-rcu-3 went down
+unexpected EOF
+unexpected EOF
+read unix /var/tmp/824-1000/pb-5246-rcu-1: connection reset by peer
+unexpected EOF
+read unix /var/tmp/824-1000/pb-5246-rcu-1: connection reset by peer
+read unix /var/tmp/824-1000/pb-5246-rcu-2: connection reset by peer
+write unix /var/tmp/824-1000/pb-5246-rcu-1: broken pipe
+write unix /var/tmp/824-1000/pb-5246-rcu-1: broken pipe
+unexpected EOF
+unexpected EOF
+unexpected EOF
+read unix /var/tmp/824-1000/pb-5246-rcu-2: connection reset by peer
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+read unix /var/tmp/824-1000/pb-5246-rcu-1: connection reset by peer
+connection is shut down
+write unix /var/tmp/824-1000/pb-5246-rcu-2: broken pipe
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-rcu-1: broken pipe
+write unix /var/tmp/824-1000/pb-5246-rcu-2: broken pipe
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+/var/tmp/824-1000/pb-5246-rcu-3 online
+write unix /var/tmp/824-1000/pb-5246-rcu-2: broken pipe
+unexpected EOF
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-rcu-1: broken pipe
+read unix /var/tmp/824-1000/pb-5246-rcu-1: connection reset by peer
+unexpected EOF
+read unix /var/tmp/824-1000/pb-5246-rcu-1: connection reset by peer
+write unix /var/tmp/824-1000/pb-5246-rcu-1: broken pipe
+connection is shut down
+unexpected EOF
+read unix /var/tmp/824-1000/pb-5246-rcu-1: connection reset by peer
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+read unix /var/tmp/824-1000/pb-5246-rcu-1: connection reset by peer
+unexpected EOF
+read unix /var/tmp/824-1000/pb-5246-rcu-2: connection reset by peer
+unexpected EOF
+unexpected EOF
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-rcu-2: broken pipe
+unexpected EOF
+/var/tmp/824-1000/pb-5246-rcu-2 went down
+write unix /var/tmp/824-1000/pb-5246-rcu-1: broken pipe
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-rcu-1: broken pipe
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-rcu-1: broken pipe
+unexpected EOF
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-rcu-1: broken pipe
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-rcu-1: broken pipe
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-rcu-1: broken pipe
+write unix /var/tmp/824-1000/pb-5246-rcu-1: broken pipe
+write unix /var/tmp/824-1000/pb-5246-rcu-1: broken pipe
+unexpected EOF
+/var/tmp/824-1000/pb-5246-rcu-2 online
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-rcu-1: broken pipe
+write unix /var/tmp/824-1000/pb-5246-rcu-1: broken pipe
+read unix /var/tmp/824-1000/pb-5246-rcu-1: connection reset by peer
+unexpected EOF
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-rcu-1: broken pipe
+write unix /var/tmp/824-1000/pb-5246-rcu-1: broken pipe
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-rcu-1: broken pipe
+unexpected EOF
+unexpected EOF
+unexpected EOF
+/var/tmp/824-1000/pb-5246-rcu-2 went down
+read unix /var/tmp/824-1000/pb-5246-rcu-1: connection reset by peer
+unexpected EOF
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-rcu-1: broken pipe
+write unix /var/tmp/824-1000/pb-5246-rcu-1: broken pipe
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+connection is shut down
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-rcu-1: broken pipe
+read unix /var/tmp/824-1000/pb-5246-rcu-1: connection reset by peer
+write unix /var/tmp/824-1000/pb-5246-rcu-1: broken pipe
+/var/tmp/824-1000/pb-5246-rcu-2 online
+unexpected EOF
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-rcu-1: broken pipe
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-rcu-1: broken pipe
+unexpected EOF
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-rcu-1: broken pipe
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+/var/tmp/824-1000/pb-5246-rcu-3 went down
+write unix /var/tmp/824-1000/pb-5246-rcu-1: broken pipe
+unexpected EOF
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-rcu-1: broken pipe
+write unix /var/tmp/824-1000/pb-5246-rcu-1: broken pipe
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+read unix /var/tmp/824-1000/pb-5246-rcu-1: connection reset by peer
+write unix /var/tmp/824-1000/pb-5246-rcu-1: broken pipe
+/var/tmp/824-1000/pb-5246-rcu-3 online
+write unix /var/tmp/824-1000/pb-5246-rcu-1: broken pipe
+write unix /var/tmp/824-1000/pb-5246-rcu-1: broken pipe
+read unix /var/tmp/824-1000/pb-5246-rcu-1: connection reset by peer
+write unix /var/tmp/824-1000/pb-5246-rcu-1: broken pipe
+unexpected EOF
+connection is shut down
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-rcu-1: broken pipe
+write unix /var/tmp/824-1000/pb-5246-rcu-1: broken pipe
+connection is shut down
+unexpected EOF
+unexpected EOF
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-rcu-1: broken pipe
+write unix /var/tmp/824-1000/pb-5246-rcu-1: broken pipe
+unexpected EOF
+unexpected EOF
+/var/tmp/824-1000/pb-5246-rcu-3 went down
+write unix /var/tmp/824-1000/pb-5246-rcu-1: broken pipe
+write unix /var/tmp/824-1000/pb-5246-rcu-1: broken pipe
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-rcu-1: broken pipe
+write unix /var/tmp/824-1000/pb-5246-rcu-1: broken pipe
+unexpected EOF
+unexpected EOF
+read unix /var/tmp/824-1000/pb-5246-rcu-1: connection reset by peer
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-rcu-1: broken pipe
+/var/tmp/824-1000/pb-5246-rcu-3 online
+write unix /var/tmp/824-1000/pb-5246-rcu-1: broken pipe
+read unix /var/tmp/824-1000/pb-5246-rcu-1: connection reset by peer
+unexpected EOF
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-rcu-1: broken pipe
+unexpected EOF
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-rcu-1: broken pipe
+write unix /var/tmp/824-1000/pb-5246-rcu-1: broken pipe
+unexpected EOF
+unexpected EOF
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-rcu-1: broken pipe
+unexpected EOF
+unexpected EOF
+/var/tmp/824-1000/pb-5246-rcu-3 went down
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-rcu-1: broken pipe
+read unix /var/tmp/824-1000/pb-5246-rcu-1: connection reset by peer
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+read unix /var/tmp/824-1000/pb-5246-rcu-1: connection reset by peer
+unexpected EOF
+write unix /var/tmp/824-1000/pb-5246-rcu-1: broken pipe
+unexpected EOF
+/var/tmp/824-1000/pb-5246-rcu-3 online
+unexpected EOF
+connection is shut down
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+read unix /var/tmp/824-1000/pb-5246-rcu-1: connection reset by peer
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+unexpected EOF
+/var/tmp/824-1000/pb-5246-rcu-1 went down
+/var/tmp/824-1000/pb-5246-rcu-1 online
+/var/tmp/824-1000/pb-5246-rcu-1 went down
+/var/tmp/824-1000/pb-5246-rcu-1 online
+/var/tmp/824-1000/pb-5246-rcu-2 went down
+/var/tmp/824-1000/pb-5246-rcu-2 online
+  ... Appends done ... 
+  ... Passed
+/var/tmp/824-1000/pb-5246-rcu-1 went down
+/var/tmp/824-1000/pb-5246-rcu-2 went down
+/var/tmp/824-1000/pb-5246-rcu-3 went down
+Primary timed out. No valid server left... /var/tmp/824-1000/pb-5246-rcuv-1 down
+/var/tmp/824-1000/pb-5246-rcuv-1 went down
+Test: Old primary does not serve Gets ...
+/var/tmp/824-1000/pb-5246-part1-1 online
+/var/tmp/824-1000/pb-5246-part1-2 online
+  ... Passed
+/var/tmp/824-1000/pb-5246-part1-1 went down
+/var/tmp/824-1000/pb-5246-part1-2 went down
+/var/tmp/824-1000/pb-5246-part1v-1 went down
+/var/tmp/824-1000/pb-5246-part2-1 online
+Test: Partitioned old primary does not complete Gets ...
+/var/tmp/824-1000/pb-5246-part2-2 online
+/var/tmp/824-1000/pb-5246-part2-3 online
+/var/tmp/824-1000/pb-5246-part2-2 went down
+  ... Passed
+/var/tmp/824-1000/pb-5246-part2-1 went down
+/var/tmp/824-1000/pb-5246-part2-3 went down
+PASS
+ok  	_/home/douglas/CSC462/ass2/pbservice	111.540s
