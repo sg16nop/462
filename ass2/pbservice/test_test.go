@@ -51,12 +51,9 @@ func TestBasicFail(t *testing.T) {
 	deadtime := viewservice.PingInterval * viewservice.DeadPings
 	time.Sleep(deadtime * 2)
 	if vck.Primary() != s1.me {
-		fmt.Println("prim = " + vck.Primary())
-		fmt.Println("s1.me = " + s1.me)
 		t.Fatal("first primary never formed view")
 	}
 
-	//fmt.Printf("  Here?\n")
 	ck.Put("111", "v1")
 	check(ck, "111", "v1")
 
@@ -110,7 +107,6 @@ func TestBasicFail(t *testing.T) {
 	// it when something seems to be wrong. this test allows
 	// each server to Ping() the viewserver 10 times / second.
 
-
 	count1 := int(vs.GetRPCCount())
 	t1 := time.Now()
 	for i := 0; i < 100; i++ {
@@ -133,7 +129,6 @@ func TestBasicFail(t *testing.T) {
 	s1.kill()
 	for i := 0; i < viewservice.DeadPings*2; i++ {
 		v, _ := vck.Get()
-		//fmt.Println(v.Viewnum)
 		if v.Primary == s2.me {
 			break
 		}
@@ -198,19 +193,13 @@ func TestAtMostOnce(t *testing.T) {
 		sa[i].setunreliable(true)
 	}
 
-	fmt.Println("finished server init")
-
 	for iters := 0; iters < viewservice.DeadPings*2; iters++ {
 		view, _ := vck.Get()
-		fmt.Println("testD: prim = ", view.Primary)
 		if view.Primary != "" && view.Backup != "" {
-			fmt.Println("testD: prim = ",view.Primary," back = ",view.Backup)
 			break
 		}
 		time.Sleep(viewservice.PingInterval)
 	}
-
-	fmt.Println("view initialized")
 
 	// give p+b time to ack, initialize
 	time.Sleep(viewservice.PingInterval * viewservice.DeadPings)
@@ -303,7 +292,6 @@ func TestFailPut(t *testing.T) {
 	fmt.Printf("Test: Put() immediately after primary failure ...\n")
 	s1.kill()
 	ck.Put("b", "bbb")
-	
 	check(ck, "b", "bbb")
 
 	for i := 0; i < viewservice.DeadPings*3; i++ {
@@ -315,7 +303,6 @@ func TestFailPut(t *testing.T) {
 	}
 	time.Sleep(time.Second)
 
-
 	check(ck, "a", "aaa")
 	check(ck, "b", "bbb")
 	check(ck, "c", "cc")
@@ -325,7 +312,6 @@ func TestFailPut(t *testing.T) {
 	s2.kill()
 	s3.kill()
 	time.Sleep(viewservice.PingInterval * 2)
-	Dprint("hello?")
 	vs.Kill()
 }
 
@@ -431,7 +417,6 @@ func TestConcurrentSame(t *testing.T) {
 // check that all known appends are present in a value,
 // and are in order for each concurrent client.
 func checkAppends(t *testing.T, v string, counts []int) {
-
 	nclients := len(counts)
 	for i := 0; i < nclients; i++ {
 		lastoff := -1
@@ -443,7 +428,7 @@ func checkAppends(t *testing.T, v string, counts []int) {
 			}
 			off1 := strings.LastIndex(v, wanted)
 			if off1 != off {
-				t.Fatalf("duplicate element in Append result",i, wanted)
+				t.Fatalf("duplicate element in Append result")
 			}
 			if off <= lastoff {
 				t.Fatalf("wrong order for element in Append result")
